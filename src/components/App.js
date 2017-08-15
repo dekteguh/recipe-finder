@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
+import SearchRecipes from './SearchRecipes';
+
 class App extends Component {
     render() {
         return (
-            <h1>Recipe Finder</h1>
+            <div className="App">
+                <h2>Recipe Finder</h2>
+                <SearchRecipes />
+            </div>    
         )
     }
 }
