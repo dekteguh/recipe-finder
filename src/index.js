@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import FavoriteRecipeList from './components/FavoriteRecipeList';
+
 import App from './components/App';
 import './styles/index.css';
 
@@ -9,11 +12,16 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 
 const store = createStore(rootReducer);
-store.subscribe(() => console.log('store', store.getState()));
+//store.subscribe(() => console.log('store', store.getState()));
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <BrowserRouter>
+            <Switch>
+                <Route exact path='/' component={App}/>
+                <Route path='/favorites' component={FavoriteRecipeList}/>
+            </Switch>
+        </BrowserRouter>
     </Provider>,
     document.getElementById('root')
 );
