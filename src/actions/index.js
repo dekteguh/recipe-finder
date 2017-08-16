@@ -8,7 +8,7 @@ export function setRecipes(items) {
     }
 }
 
-export function favoriteRecipe(recipe) {
+export function favoriteRecipes(recipe) {
     return {
         type: FAVORITE_RECIPE,
         recipe: recipe

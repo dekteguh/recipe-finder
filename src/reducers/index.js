@@ -10,7 +10,7 @@ const recipes = (state = [], action) => {
     }
 }
 
-const favoriteRecipe = (state = [], action) => {
+const favoriteRecipes = (state = [], action) => {
     switch (action.type) {
         case FAVORITE_RECIPE:
             state = [...state, action.recipe];
@@ -20,6 +20,6 @@ const favoriteRecipe = (state = [], action) => {
     }
 }
 
-const rootReducer = combineReducers({ recipes, favoriteRecipe });
+const rootReducer = combineReducers({ recipes, favoriteRecipes });
 
 export default rootReducer;
